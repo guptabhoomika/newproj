@@ -5,7 +5,12 @@ class Kcomm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text("a")
+          child: RaisedButton(
+            child: Text("Chat"),
+            onPressed: () {
+         
+            },
+          )
       )
     
       
