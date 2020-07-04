@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:crisp/crisp.dart';
+
 class Crisp extends StatefulWidget {
   @override
   _CrispState createState() => _CrispState();
@@ -8,11 +9,8 @@ class Crisp extends StatefulWidget {
 class _CrispState extends State<Crisp> {
   @override
   void initState() {
-    // TODO: implement initState
-    print("In initstate");
-        crisp.initialize(
-      websiteId: '00104658-ccb8-432e-9d75-9511b5a7576',
-     
+    crisp.initialize(
+      websiteId: 'f0ff85ee-b0ef-4186-8290-9d5dbb708553',
     );
 
     crisp.register(
@@ -24,43 +22,21 @@ class _CrispState extends State<Crisp> {
       ),
     );
 
-    crisp.setMessage("Hello world - initial message");
+    crisp.setMessage("How can we help you?");
     print(crisp.user);
     print(crisp.user.email);
-    
- 
+
     super.initState();
   }
-  @override
- Widget build(BuildContext context) {
-    return Scaffold(
-     body: 
-        Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-           children: [
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: Text(crisp.user.email),
-             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(crisp.user.phone),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(crisp.user.nickname),
-            ),
-        
-             
 
-           ],
-       
-     ),
-        )
-      
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: CrispView(
+        loadingWidget: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
     );
   }
 }
