@@ -60,4 +60,6 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+implementation 'io.kommunicate.sdk:kommunicateui:2.0.1'
 }
